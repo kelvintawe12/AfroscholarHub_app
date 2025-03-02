@@ -1,0 +1,185 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+.site-header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.site-logo {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.main-nav {
+    margin-top: 10px;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-item {
+    margin: 0;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-link:hover,
+.nav-item.active .nav-link {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.about-hero {
+    background: #f4f4f4;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.hero-title {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.hero-subtitle {
+    font-size: 1.2em;
+    color: #666;
+}
+
+/* Main Content */
+.main-content {
+    padding: 50px 0;
+}
+
+.about-section,
+.vision-mission-section,
+.values-section,
+.history-section {
+    margin-bottom: 50px;
+}
+
+.section-header {
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 2em;
+    margin: 0;
+}
+
+.section-subtitle {
+    font-size: 1.5em;
+    margin: 0 0 10px 0;
+}
+
+.intro-text,
+.vision-text,
+.mission-text,
+.timeline-description {
+    font-size: 1em;
+    color: #666;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.col-50 {
+    flex: 1 1 45%;
+}
+
+.values-list {
+    list-style: none;
+    padding: 0;
+}
+
+.value-item {
+    margin-bottom: 10px;
+}
+
+.value-icon {
+    margin-right: 10px;
+}
+
+.timeline {
+    border-left: 2px solid #333;
+    padding-left: 20px;
+}
+
+.timeline-item {
+    margin-bottom: 20px;
+}
+
+.timeline-title {
+    font-size: 1.2em;
+    margin: 0 0 5px 0;
+}
+
+/* Footer Styles */
+.site-footer {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-title {
+    margin: 0 0 10px 0;
+}
+
+.footer-email,
+.footer-phone {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-social {
+    margin-top: 10px;
+}
+
+.social-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.social-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+}

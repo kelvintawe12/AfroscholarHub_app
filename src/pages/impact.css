@@ -1,0 +1,297 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+.site-header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.top-nav {
+    background-color: #444;
+    padding: 5px 0;
+}
+
+.top-nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+}
+
+.top-nav-item {
+    margin-left: 20px;
+}
+
+.top-nav-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.main-nav {
+    padding: 10px 0;
+}
+
+.logo-wrapper {
+    float: left;
+}
+
+.site-logo {
+    margin: 0;
+}
+
+.main-navigation {
+    float: right;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    margin-left: 20px;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+}
+
+.dropdown-item {
+    margin: 0;
+}
+
+.dropdown-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Breadcrumb Styles */
+.breadcrumb {
+    background-color: #e9ecef;
+    padding: 10px 0;
+}
+
+.breadcrumb-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.breadcrumb-item {
+    margin-right: 5px;
+}
+
+.breadcrumb-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.breadcrumb-separator {
+    margin-right: 5px;
+}
+
+/* Main Content Styles */
+.main-content {
+    padding: 20px 0;
+}
+
+.impact-hero {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.hero-title {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.hero-description {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.impact-section {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.stories-list,
+.reports-grid,
+.testimonials-slider {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.story-item,
+.report-item,
+.testimonial-item {
+    margin-bottom: 20px;
+}
+
+.report-item {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.report-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.report-summary {
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-secondary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.testimonial-text {
+    font-style: italic;
+}
+
+.testimonial-author {
+    text-align: right;
+    font-weight: bold;
+}
+
+/* Footer Styles */
+.site-footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer-top,
+.footer-middle,
+.footer-bottom {
+    padding: 20px 0;
+}
+
+.footer-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.footer-text,
+.footer-contact-list,
+.footer-links-list,
+.newsletter-form,
+.social-links,
+.widget-posts-list,
+.widget-events-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-contact-list .contact-item,
+.footer-links-list .footer-link-item,
+.social-links .social-item,
+.widget-posts-list .widget-post-item,
+.widget-events-list .widget-event-item {
+    margin-bottom: 10px;
+}
+
+.footer-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.newsletter-input {
+    padding: 10px;
+    width: calc(100% - 120px);
+    margin-right: 10px;
+}
+
+.newsletter-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.footer-copy,
+.footer-credits {
+    margin: 0;
+}
+
+.footer-additional-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.footer-additional-item {
+    margin-left: 20px;
+}
+
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    text-decoration: none;
+    display: none;
+}
+
+#back-to-top:hover {
+    background-color: #0056b3;
+}
