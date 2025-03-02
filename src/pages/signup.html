@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <title>AfroScholarHub Charity - Sign Up</title>
+    <style>
+        /* Enhanced Reset and Base Styles */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2A5C82;
+            --secondary-color: #F4B223;
+            --accent-color: #E94F37;
+            --dark-color: #1A1A1A;
+            --light-color: #F8F9FA;
+            --success-color: #28A745;
+            --font-heading: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --gradient: linear-gradient(135deg, var(--primary-color) 0%, #3A7CA5 100%);
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--dark-color);
+            background: var(--light-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>AfroScholarHub Charity</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="impact.html">Impact</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="signup">
+            <h2>Create an Account</h2>
+            <form action="submit_signup.html" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="login.html">Login here</a>.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="site-footer" class="site-footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="footer-row">
+            <div class="footer-column footer-about">
+              <h4 class="footer-title">About AfroScholarHub Charity</h4>
+              <p class="footer-text">
+                We are a non-profit organization committed to empowering
+                communities through education, scholarships, and support
+                initiatives. Our goal is to break barriers and create
+                opportunities for all.
+              </p>
+            </div>
+            <div class="footer-column footer-contact">
+              <h4 class="footer-title">Contact Us</h4>
+              <ul class="footer-contact-list">
+                <li class="contact-item">
+                  <i class="fas fa-map-marker-alt"></i> 1234 Education Lane,
+                  City, Country
+                </li>
+                <li class="contact-item">
+                  <i class="fas fa-envelope"></i>
+                  <a href="mailto:info@afroscholarhub.org" class="footer-link"
+                    >info@afroscholarhub.org</a
+                  >
+                </li>
+                <li class="contact-item">
+                  <i class="fas fa-phone"></i> +1-234-567-8900
+                </li>
+              </ul>
+            </div>
+            <div class="footer-column footer-links">
+              <h4 class="footer-title">Quick Links</h4>
+              <ul class="footer-links-list">
+                <li class="footer-link-item">
+                  <a href="index.html" class="footer-link">Home</a>
+                </li>
+                <li class="footer-link-item">
+                  <a href="about.html" class="footer-link">About Us</a>
+                </li>
+                <li class="footer-link-item">
+                  <a href="impact.html" class="footer-link">Impact</a>
+                </li>
+                <li class="footer-link-item">
+                  <a href="donate.html" class="footer-link">Donate</a>
+                </li>
+                <li class="footer-link-item">
+                  <a href="blog.html" class="footer-link">Blog</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-column footer-newsletter">
+              <h4 class="footer-title">Newsletter</h4>
+              <p class="footer-text">
+                Subscribe to our newsletter for the latest updates and events.
+              </p>
+              <form
+                id="newsletter-form"
+                class="newsletter-form"
+                action="subscribe.html"
+                method="POST"
+              >
+                <input
+                  type="email"
+                  name="email"
+                  class="newsletter-input"
+                  placeholder="Your email address"
+                  required
+                />
+                <button type="submit" class="newsletter-button">
+                  Subscribe
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-middle">
+        <div class="container">
+          <div class="footer-social">
+            <h4 class="footer-title">Follow Us</h4>
+            <ul class="social-links">
+              <li class="social-item">
+                <a href="#" class="social-link"
+                  ><i class="fab fa-facebook-f"></i> Facebook</a
+                >
+              </li>
+              <li class="social-item">
+                <a href="#" class="social-link"
+                  ><i class="fab fa-twitter"></i> Twitter</a
+                >
+              </li>
+              <li class="social-item">
+                <a href="#" class="social-link"
+                  ><i class="fab fa-instagram"></i> Instagram</a
+                >
+              </li>
+              <li class="social-item">
+                <a href="#" class="social-link"
+                  ><i class="fab fa-linkedin-in"></i> LinkedIn</a
+                >
+              </li>
+              <li class="social-item">
+                <a href="#" class="social-link"
+                  ><i class="fab fa-youtube"></i> YouTube</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="footer-bottom-row">
+            <div class="footer-bottom-left">
+              <p class="footer-copy">
+                &copy; 2023 AfroScholarHub Charity. All rights reserved.
+              </p>
+            </div>
+            <div class="footer-bottom-center">
+              <p class="footer-credits">Designed by the AfroScholarHub Team</p>
+            </div>
+            <div class="footer-bottom-right">
+              <ul class="footer-additional-links">
+                <li class="footer-additional-item">
+                  <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                </li>
+                <li class="footer-additional-item">
+                  <a href="terms.html" class="footer-link">Terms of Use</a>
+                </li>
+                <li class="footer-additional-item">
+                  <a href="sitemap.html" class="footer-link">Sitemap</a>
+                </li>
+                <li class="footer-additional-item">
+                  <a href="faq.html" class="footer-link">FAQ</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#site-header" class="back-to-top" id="back-to-top">Back to Top</a>
+</body>
+</html>
