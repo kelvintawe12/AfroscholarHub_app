@@ -7,74 +7,76 @@
     --brand-ash: #888888;
     --font-heading: "Space Grotesk", sans-serif;
     --font-body: "Inter", sans-serif;
-  }
-  
-  body {
+}
+
+body {
     font-family: var(--font-body);
     margin: 0;
     padding: 0;
     color: var(--brand-black);
-  }
-  
-  .container {
+    line-height: 1.6;
+}
+
+.container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-  }
-  
-  /* Header Styles */
-  .top-nav {
+}
+
+/* Header Styles */
+.top-nav {
     background: var(--brand-black);
     padding: 0.8rem 0;
-  }
-  
-  .top-nav-list {
+}
+
+.top-nav-list {
     display: flex;
     justify-content: flex-end;
     gap: 2rem;
     list-style: none;
-  }
-  
-  .top-nav-link {
+}
+
+.top-nav-link {
     color: var(--brand-white);
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.3s ease;
-  }
-  
-  .top-nav-link:hover {
+}
+
+.top-nav-link:hover {
     color: var(--primary-red);
-  }
-  
-  .main-nav {
+}
+
+.main-nav {
     background: var(--brand-white);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
-  }
-  
-  .site-logo a {
+}
+
+.site-logo a {
     font-family: var(--font-heading);
     font-size: 2rem;
     color: var(--primary-red);
     text-decoration: none;
-  }
-  
-  .nav-list {
+}
+
+.nav-list {
     display: flex;
     gap: 2rem;
     list-style: none;
-  }
-  
-  .nav-link {
+}
+
+.nav-link {
     color: var(--brand-black);
     text-decoration: none;
     padding: 1rem 0;
     position: relative;
-  }
-  
-  .nav-link::after {
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -83,56 +85,33 @@
     height: 2px;
     background: var(--primary-red);
     transition: width 0.3s ease;
-  }
-  
-  .nav-link:hover::after {
+}
+
+.nav-link:hover::after {
     width: 100%;
-  }
+}
 
-  /* Mobile Navigation Styles */
-  @media (max-width: 768px) {
-    .nav-list {
-      display: none; /* Hide navigation links by default */
-      flex-direction: column; /* Stack links vertically */
-      position: absolute; /* Position absolutely */
-      top: 60px; /* Position below the header */
-      right: 0; /* Align to the right */
-      background: var(--brand-white); /* Background color */
-      width: 100%; /* Full width */
-      z-index: 999; /* Ensure it appears above other content */
-    }
-
-    .nav-list.active {
-      display: flex; /* Show navigation links when active */
-    }
-
-    .menu-toggle.active span {
-      background: var(--primary-red); /* Change color when active */
-    }
-  }
-
-  
-  /* Hero Section */
-  .hero {
-    background: url("hero.jpg") no-repeat center center/cover;
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
     color: var(--brand-white);
     padding: 8rem 0;
     text-align: center;
-  }
-  
-  .hero-title {
+}
+
+.hero-title {
     font-family: var(--font-heading);
     font-size: 3.5rem;
     margin-bottom: 1rem;
-  }
-  
-  .hero-description {
+}
+
+.hero-description {
     font-size: 1.25rem;
     max-width: 600px;
     margin: 0 auto 2rem;
-  }
-  
-  .btn-hero {
+}
+
+.btn-hero {
     background: var(--primary-red);
     color: var(--brand-white);
     padding: 1rem 2rem;
@@ -140,98 +119,100 @@
     border-radius: 5px;
     text-decoration: none;
     transition: background 0.3s ease;
-  }
-  
-  .btn-hero:hover {
+}
+
+.btn-hero:hover {
     background: #c0392b;
-  }
-  
-  /* Statistics Section */
-  .statistics {
+}
+
+
+/* Statistics Section */
+.statistics {
     padding: 4rem 0;
     background: var(--brand-white);
-  }
-  
-  .stats-grid {
+}
+
+.stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
-  }
-  
-  .stat-card {
+}
+
+.stat-card {
     text-align: center;
     padding: 2rem;
     background: var(--brand-white);
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .stat-card i {
+}
+
+.stat-card i {
     font-size: 3rem;
     color: var(--primary-red);
     margin-bottom: 1rem;
-  }
-  
-  .stat-number {
+}
+
+.stat-number {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
-  }
-  
-  .stat-text {
+}
+
+.stat-text {
     font-size: 1.1rem;
     color: var(--brand-grey);
-  }
-  
-  /* Programs Section */
-  .programs {
+}
+
+/* Programs Section */
+.programs {
     padding: 4rem 0;
     background: #f9f9f9;
-  }
-  
-  .programs-grid {
+}
+
+.programs-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-  }
-  
-  .program-card {
+}
+
+.program-card {
     text-align: center;
     padding: 2rem;
     background: var(--brand-white);
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .program-card i {
+}
+
+.program-card i {
     font-size: 3rem;
     color: var(--primary-red);
     margin-bottom: 1rem;
-  }
-  
-  .program-title {
+}
+
+.program-title {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-  }
-  
-  .program-description {
+}
+
+.program-description {
     font-size: 1rem;
     color: var(--brand-grey);
-  }
-  
-  /* Testimonials Section */
-  .testimonials {
+}
+
+
+/* Testimonials Section */
+.testimonials {
     padding: 4rem 0;
     background: var(--brand-white);
-  }
-  
-  .testimonials-slider {
+}
+
+.testimonials-slider {
     display: flex;
     gap: 2rem;
     overflow-x: auto;
     padding-bottom: 2rem;
-  }
-  
-  .testimonial-card {
+}
+
+.testimonial-card {
     flex: 0 0 auto;
     width: 300px;
     text-align: center;
@@ -239,68 +220,68 @@
     background: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .testimonial-image {
+}
+
+.testimonial-image {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     margin-bottom: 1rem;
-  }
-  
-  .testimonial-text {
+}
+
+.testimonial-text {
     font-size: 1rem;
     margin-bottom: 1rem;
-  }
-  
-  .testimonial-author {
+}
+
+.testimonial-author {
     font-size: 0.9rem;
     color: var(--brand-grey);
-  }
-  
-  /* Footer Styles */
-  .site-footer {
+}
+
+/* Footer Styles */
+.site-footer {
     background: var(--brand-black);
     color: var(--brand-white);
     padding: 4rem 0;
-  }
-  
-  .footer-grid {
+}
+
+.footer-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-  }
-  
-  .footer-section {
+}
+
+.footer-section {
     text-align: center;
-  }
-  
-  .footer-title {
+}
+
+.footer-title {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-  }
-  
-  .footer-section ul {
+}
+
+.footer-section ul {
     list-style: none;
     padding: 0;
-  }
-  
-  .footer-section ul li {
+}
+
+.footer-section ul li {
     margin: 0.5rem 0;
-  }
-  
-  .footer-section ul li a {
+}
+
+.footer-section ul li a {
     color: var(--brand-white);
     text-decoration: none;
     transition: color 0.3s ease;
-  }
-  
-  .footer-section ul li a:hover {
+}
+
+.footer-section ul li a:hover {
     color: var(--primary-red);
-  }
-  
-  /* Back to Top Button */
-  .back-to-top {
+}
+
+/* Back to Top Button */
+.back-to-top {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
@@ -316,9 +297,9 @@
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease;
-  }
-  
-  .back-to-top.visible {
+}
+
+.back-to-top.visible {
     opacity: 1;
     visibility: visible;
-  }
+}
