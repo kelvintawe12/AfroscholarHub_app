@@ -23,7 +23,13 @@ document.addEventListener("DOMContentLoaded", function () {
       scrollLeft = slider.scrollLeft;
     });
   
-    slider.addEventListener
+        if (window.scrollY > 300) {
+            backToTop.classList.add("visible");
+        } else {
+            backToTop.classList.remove("visible");
+        }
+    });
+
 
     // script.js
 document.addEventListener("DOMContentLoaded", function () {
@@ -47,4 +53,3 @@ document.addEventListener("DOMContentLoaded", function () {
     slider.addEventListener("mousedown", (e) => {
       isDown = true;
       startX = e.pageX - slider.offsetLeft;
-  

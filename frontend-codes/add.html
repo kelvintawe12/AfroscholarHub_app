@@ -600,20 +600,238 @@
         </nav>
       </div>
     </header>
-
-    </header>
-
-    <!-- Hero Section -->
+    <style>
+      /* Enhanced Hero Section */
+      .hero {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+      }
+    
+      .hero-slider {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+    
+      .slider-item {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: scale(1.1);
+        background-size: cover;
+        background-position: center;
+      }
+    
+      .slider-item.active {
+        opacity: 1;
+        transform: scale(1);
+      }
+    
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 2rem;
+        background: rgba(0, 0, 0, 0.7);
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        transform: translateZ(30px);
+      }
+    
+      .hero-title {
+        font-size: 3.5rem;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+        transform: translateY(50px);
+        opacity: 0;
+        transition: all 0.8s ease;
+      }
+    
+      .hero-title.visible {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    
+      .hero-description {
+        font-size: 1.25rem;
+        max-width: 600px;
+        margin: 0 auto 2rem;
+        transform: translateY(50px);
+        opacity: 0;
+        transition: all 0.8s ease 0.2s;
+      }
+    
+      .hero-description.visible {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    
+      .slider-controls {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 1rem;
+        z-index: 3;
+      }
+    
+      .slider-arrow {
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+    
+      .slider-arrow:hover {
+        background: var(--primary-red);
+        transform: scale(1.1);
+      }
+    
+      .parallax-content {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 2rem;
+        pointer-events: none;
+      }
+    
+      .success-card {
+        width: 300px;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 1.5rem;
+        border-radius: 10px;
+        transform: translateY(100%);
+        opacity: 0;
+        transition: all 0.8s ease 0.4s;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+    
+      .success-card.visible {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    
+      .gradient-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, rgba(25, 25, 25, 0.8) 0%, rgba(10, 10, 10, 0.4) 100%);
+        z-index: 1;
+      }
+    </style>
+    
     <section id="hero" class="hero">
+      <div class="hero-slider">
+        <div class="slider-item active" style="background-image: url('education1.jpg')" data-content="1"></div>
+        <div class="slider-item" style="background-image: url('education2.jpg')" data-content="2"></div>
+        <div class="slider-item" style="background-image: url('education3.jpg')" data-content="3"></div>
+        <div class="gradient-overlay"></div>
+      </div>
+    
       <div class="container">
-        <h2 class="hero-title">Empowering Futures Through Education</h2>
-        <p class="hero-description">
-          Join us in making a difference. Your support helps students achieve
-          their dreams.
-        </p>
-        <a href="#donate" class="btn btn-hero">Donate Now</a>
+        <div class="hero-content">
+          <h2 class="hero-title">Empowering Futures Through Education</h2>
+          <p class="hero-description">
+            Join us in making a difference. Your support helps students achieve
+            their dreams.
+          </p>
+          <a href="#donate" class="btn btn-hero">Donate Now</a>
+        </div>
+      </div>
+    
+      <div class="parallax-content">
+        <div class="success-card">
+          <h3>Recent Success</h3>
+          <p>"100+ scholarships awarded this year"</p>
+        </div>
+        <div class="success-card">
+          <h3>New Program</h3>
+          <p>STEM workshops launched in 5 countries</p>
+        </div>
+      </div>
+    
+      <div class="slider-controls">
+        <button class="slider-arrow prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-arrow next"><i class="fas fa-chevron-right"></i></button>
       </div>
     </section>
+    
+    <script>
+      // Parallax Effect
+      document.addEventListener('mousemove', (e) => {
+        const x = (window.innerWidth - e.pageX) / 50;
+        const y = (window.innerHeight - e.pageY) / 50;
+        document.querySelector('.hero-slider').style.transform = 
+          `translate3d(${x}px, ${y}px, 0)`;
+      });
+    
+      // Slider Functionality
+      let currentSlide = 0;
+      const slides = document.querySelectorAll('.slider-item');
+      const cards = document.querySelectorAll('.success-card');
+      const titles = document.querySelectorAll('.hero-title, .hero-description');
+    
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+        });
+        
+        // Animate content
+        titles.forEach(title => title.classList.remove('visible'));
+        cards.forEach(card => card.classList.remove('visible'));
+        
+        setTimeout(() => {
+          titles.forEach(title => title.classList.add('visible'));
+          cards.forEach(card => card.classList.add('visible'));
+        }, 300);
+      }
+    
+      // Auto-advance and controls
+      let autoSlide = setInterval(() => nextSlide(), 5000);
+    
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }
+    
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+      }
+    
+      document.querySelector('.next').addEventListener('click', () => {
+        clearInterval(autoSlide);
+        nextSlide();
+        autoSlide = setInterval(() => nextSlide(), 5000);
+      });
+    
+      document.querySelector('.prev').addEventListener('click', () => {
+        clearInterval(autoSlide);
+        prevSlide();
+        autoSlide = setInterval(() => nextSlide(), 5000);
+      });
+    
+      // Initial animation
+      window.addEventListener('load', () => {
+        document.querySelector('.hero-title').classList.add('visible');
+        document.querySelector('.hero-description').classList.add('visible');
+        document.querySelectorAll('.success-card').forEach(card => 
+          card.classList.add('visible'));
+      });
+    
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') prevSlide();
+        if (e.key === 'ArrowRight') nextSlide();
+      });
+    </script>
 
     <!-- Statistics Section -->
     <section id="statistics" class="statistics">
