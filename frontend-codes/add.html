@@ -324,106 +324,283 @@
   <body>
     <!-- Header -->
     <header id="site-header" class="site-header">
-      <div class="top-nav">
-        <div class="container">
-          <nav class="top-navigation">
-            <ul class="top-nav-list">
-              <li class="top-nav-item">
-                <a href="contact.html" class="top-nav-link">Contact</a>
-              </li>
-              <li class="top-nav-item">
-                <a href="login.html" class="top-nav-link">Login</a>
-              </li>
-              <li class="top-nav-item">
-                <a href="signup.html" class="top-nav-link">Sign Up</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-      <!-- Main Navigation -->
-      <div class="main-nav">
-        <div class="container">
-          <div class="logo-wrapper">
-            <h1 class="site-logo">
-              <a href="index.html">AfroScholarHub Charity</a>
-            </h1>
+    <style>
+      /* Header Styles */
+      .top-bar {
+        background: var(--brand-black);
+        padding: 0.5rem 0;
+        font-size: 0.9rem;
+      }
+
+      .top-bar-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .utility-nav {
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      .utility-nav a {
+        color: var(--brand-white);
+        text-decoration: none;
+        transition: color 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .utility-nav a:hover {
+        color: var(--primary-red);
+      }
+
+      .main-header {
+        background: var(--brand-white);
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+      }
+
+      .logo {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--primary-red);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .logo img {
+        height: 40px;
+        width: auto;
+      }
+
+      .main-nav {
+        position: relative;
+      }
+
+      .nav-list {
+        display: flex;
+        gap: 2rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .nav-item {
+        position: relative;
+      }
+
+      .nav-link {
+        color: var(--brand-black);
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: var(--primary-red);
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--brand-white);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        min-width: 220px;
+        padding: 1rem 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+        z-index: 1000;
+      }
+
+      .nav-item:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .dropdown-item {
+        padding: 0.5rem 1.5rem;
+      }
+
+      .dropdown-link {
+        color: var(--brand-grey);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: block;
+        padding: 0.5rem 1rem;
+        border-left: 3px solid transparent;
+      }
+
+      .dropdown-link:hover {
+        color: var(--primary-red);
+        background: #fff5f4;
+        border-left-color: var(--primary-red);
+        padding-left: 1.5rem;
+      }
+
+      .dropdown-menu .dropdown-menu {
+        left: 100%;
+        top: 0;
+        transform: translateY(10px);
+      }
+
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      @media (max-width: 992px) {
+        .menu-toggle {
+          display: block;
+        }
+
+        .main-nav {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          height: 100vh;
+          background: var(--brand-white);
+          width: 300px;
+          padding: 2rem;
+          transition: right 0.3s ease;
+          overflow-y: auto;
+        }
+
+        .main-nav.active {
+          right: 0;
+        }
+
+        .nav-list {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .dropdown-menu {
+          position: static;
+          box-shadow: none;
+          padding: 0;
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+          display: none;
+          margin-left: 1rem;
+        }
+
+        .nav-item:hover .dropdown-menu {
+          display: block;
+        }
+      }
+    </style>
+
+    <header class="main-header">
+      <!-- Top Bar -->
+      <div class="top-bar">
+        <div class="container top-bar-content">
+          <div class="contact-info">
+            <a href="tel:+1234567890"><i class="fas fa-phone"></i> +1 (234) 567-890</a>
           </div>
-          <nav class="main-navigation">
-            <button class="menu-toggle" title="Toggle navigation">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-            <ul class="nav-list">
-              <li class="nav-item">
-                <a href="index.html" class="nav-link">Home</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a href="about.html" class="nav-link">About Us</a>
-                <ul class="dropdown-menu">
-                  <li class="dropdown-item">
-                    <a href="about.html#mission" class="dropdown-link"
-                      >Our Mission</a
-                    >
-                  </li>
-                  <li class="dropdown-item">
-                    <a href="about.html#team" class="dropdown-link">Our Team</a>
-                  </li>
-                  <li class="dropdown-item">
-                    <a href="about.html#history" class="dropdown-link"
-                      >Our History</a
-                    >
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a href="impact.html" class="nav-link">Impact</a>
-                <ul class="dropdown-menu">
-                  <li class="dropdown-item">
-                    <a href="impact.html#success-stories" class="dropdown-link"
-                      >Success Stories</a
-                    >
-                  </li>
-                  <li class="dropdown-item">
-                    <a href="impact.html#reports" class="dropdown-link"
-                      >Impact Reports</a
-                    >
-                  </li>
-                  <li class="dropdown-item">
-                    <a href="impact.html#testimonials" class="dropdown-link"
-                      >Testimonials</a
-                    >
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a href="donate.html" class="nav-link">Donate</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a href="blog.html" class="nav-link">Blog</a>
-                <ul class="dropdown-menu">
-                  <li class="dropdown-item">
-                    <a href="blog.html#latest" class="dropdown-link"
-                      >Latest Posts</a
-                    >
-                  </li>
-                  <li class="dropdown-item">
-                    <a href="blog.html#categories" class="dropdown-link"
-                      >Categories</a
-                    >
-                  </li>
-                  <li class="dropdown-item">
-                    <a href="blog.html#archives" class="dropdown-link"
-                      >Archives</a
-                    >
-                  </li>
-                </ul>
-              </li>
-            </ul>
+          <nav class="utility-nav">
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+            <a href="signup.html"><i class="fas fa-user-plus"></i> Sign Up</a>
           </nav>
         </div>
       </div>
+
+      <!-- Main Navigation -->
+      <div class="container header-content">
+        <a href="/" class="logo">
+          <img src="logo.png" alt="AfroScholarHub Logo">
+          <span>AfroScholarHub</span>
+        </a>
+
+        <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+
+        <nav class="main-nav">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">Home</a>
+            </li>
+            
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">About <i class="fas fa-chevron-down"></i></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-item">
+                  <a href="about.html#mission" class="dropdown-link">Our Mission</a>
+                </li>
+                <li class="dropdown-item">
+                  <a href="about.html#team" class="dropdown-link">Leadership Team</a>
+                </li>
+                <li class="dropdown-item">
+                  <a href="about.html#partners" class="dropdown-link">Partners</a>
+                </li>
+                <li class="dropdown-item">
+                  <a href="about.html#financials" class="dropdown-link">Financials</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a href="programs.html" class="nav-link">Programs <i class="fas fa-chevron-down"></i></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-item">
+                  <a href="programs.html#scholarships" class="dropdown-link">Scholarships</a>
+                </li>
+                <li class="dropdown-item">
+                  <a href="programs.html#mentorship" class="dropdown-link">Mentorship</a>
+                </li>
+                <li class="dropdown-item">
+                  <a href="programs.html#workshops" class="dropdown-link">Workshops</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a href="impact.html" class="nav-link">Impact <i class="fas fa-chevron-down"></i></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-item">
+                  <a href="impact.html#stories" class="dropdown-link">Success Stories</a>
+                </li>
+                <li class="dropdown-item">
+                  <a href="impact.html#reports" class="dropdown-link">Annual Reports</a>
+                </li>
+                <li class="dropdown-item">
+                  <a href="impact.html#metrics" class="dropdown-link">Key Metrics</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a href="donate.html" class="nav-link cta-button">Donate</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
     </header>
 
     <!-- Hero Section -->
@@ -520,34 +697,207 @@
       </div>
     </section>
 
+    <style>
+      /* ... (keep previous styles) */
+
+      /* Enhanced Footer Styles */
+      .site-footer {
+        background: var(--brand-black);
+        color: var(--brand-white);
+        padding: 6rem 0 0;
+        position: relative;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 4rem;
+        padding-bottom: 4rem;
+      }
+
+      .footer-section {
+        text-align: left;
+      }
+
+      .footer-title {
+        font-family: var(--font-heading);
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+        padding-bottom: 1rem;
+      }
+
+      .footer-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background: var(--primary-red);
+      }
+
+      .footer-section p {
+        color: var(--brand-ash);
+        line-height: 1.8;
+        margin: 1rem 0;
+      }
+
+      .footer-section ul li {
+        margin: 1rem 0;
+      }
+
+      .footer-section ul li a {
+        color: var(--brand-ash);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .footer-section ul li a:hover {
+        color: var(--primary-red);
+        transform: translateX(5px);
+      }
+
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: var(--brand-ash);
+      }
+
+      .contact-item i {
+        color: var(--primary-red);
+        width: 25px;
+        text-align: center;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .social-links a {
+        color: var(--brand-white);
+        font-size: 1.5rem;
+        transition: color 0.3s ease;
+      }
+
+      .social-links a:hover {
+        color: var(--primary-red);
+      }
+
+      .footer-bottom {
+        background: #000;
+        padding: 2rem 0;
+        margin-top: 4rem;
+      }
+
+      .footer-bottom .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .copyright {
+        color: var(--brand-ash);
+        font-size: 0.9rem;
+      }
+
+      .legal-links {
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      .legal-links a {
+        color: var(--brand-ash);
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+      }
+
+      .legal-links a:hover {
+        color: var(--primary-red);
+      }
+    </style>
+
     <!-- Footer -->
     <footer id="site-footer" class="site-footer">
       <div class="container">
         <div class="footer-grid">
           <div class="footer-section">
             <h3 class="footer-title">About Us</h3>
-            <p>
-              We are a non-profit organization dedicated to empowering
-              communities through education.
-            </p>
+            <p>Empowering African youth through education and mentorship since 2015. A registered 501(c)(3) non-profit organization.</p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
           </div>
           <div class="footer-section">
             <h3 class="footer-title">Quick Links</h3>
             <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#impact">Impact</a></li>
-              <li><a href="#donate">Donate</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i>Home</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i>Our Mission</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i>Impact Report</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i>Donate Now</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i>Careers</a></li>
             </ul>
           </div>
           <div class="footer-section">
-            <h3 class="footer-title">Contact Us</h3>
-            <p>Email: info@afroscholarhub.org</p>
-            <p>Phone: +1 (123) 456-7890</p>
+            <h3 class="footer-title">Contact Info</h3>
+            <div class="contact-info">
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <p>123 Education Blvd</p>
+                  <p>Nairobi, Kenya</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <p>info@afroscholarhub.org</p>
+                  <p>support@afroscholarhub.org</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                  <p>+254 712 345 678</p>
+                  <p>+1 (800) 123-4567</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <span class="copyright">&copy; 2023 AfroScholarHub Charity. All rights reserved.</span>
+          <div class="legal-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Accessibility</a>
           </div>
         </div>
       </div>
     </footer>
+
 
     <!-- Back to Top Button -->
     <a href="#site-header" class="back-to-top">↑</a>
