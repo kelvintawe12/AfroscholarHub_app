@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AfroScholarHub Charity - Donate</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    /* Custom CSS for brand colors and hover effects */
+    .brand-bg {
+      background-color: #FF0000; /* Red */
+    }
+    .brand-text {
+      color: #FF0000; /* Red */
+    }
+    .brand-hover:hover {
+      background-color: #CC0000; /* Darker red */
+    }
+    .input-box {
+      border: 2px solid #E5E7EB;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .input-box:focus {
+      border-color: #FF0000;
+      box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.1);
+    }
+    .donation-method-box {
+      border: 2px solid #E5E7EB;
+      border-radius: 8px;
+      padding: 16px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .donation-method-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .footer {
+      background-color: #1F2937;
+      color: #FFFFFF;
+    }
+    .footer a:hover {
+      color: #FF0000;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-inter">
+  
+  <!-- Header -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto flex items-center justify-between p-4">
+      <a href="index.html" class="flex items-center space-x-2">
+        <img src="education3.jpg" alt="AfroScholarHub Logo" class="h-10 w-10">
+        <span class="text-xl font-bold text-gray-700">AfroScholarHub</span>
+      </a>
+      <button id="menu-toggle" class="md:hidden text-gray-700 text-2xl"><i class="fas fa-bars"></i></button>
+      <nav class="hidden md:flex space-x-6">
+        <a href="index.html" class="text-gray-700 hover:text-red-600">Home</a>
+        <a href="about.html" class="text-gray-700 hover:text-red-600">About</a>
+        <a href="programs.html" class="text-gray-700 hover:text-red-600">Programs</a>
+        <a href="donate.html" class="text-white brand-bg px-4 py-2 rounded-md brand-hover">Donate</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="text-center py-20 bg-white">
+    <div class="container mx-auto max-w-2xl">
+      <h2 class="text-4xl font-bold text-gray-800">Make a Difference Today</h2>
+      <p class="text-gray-600 mt-4">Your contributions empower students through education and mentorship.</p>
+      <a href="#donation-form" class="mt-6 inline-block brand-bg text-white px-6 py-3 rounded-md text-lg font-semibold brand-hover">Donate Now</a>
+    </div>
+  </section>
+
+  <!-- Donation Form -->
+  <section id="donation-form" class="py-16 px-4 md:px-0">
+    <div class="max-w-3xl mx-auto bg-white p-8 shadow-lg rounded-lg">
+      <h3 class="text-2xl font-bold text-gray-800 text-center">Choose Your Donation Method</h3>
+      <form id="donationForm" class="mt-6 space-y-4">
+        <label class="block">
+          <span class="text-gray-700">Full Name</span>
+          <input type="text" class="mt-1 block w-full input-box rounded-md p-2" placeholder="Enter your name" required>
+        </label>
+        <label class="block">
+          <span class="text-gray-700">Email</span>
+          <input type="email" class="mt-1 block w-full input-box rounded-md p-2" placeholder="Enter your email" required>
+        </label>
+        <label class="block">
+          <span class="text-gray-700">Donation Amount ($)</span>
+          <input type="number" class="mt-1 block w-full input-box rounded-md p-2" placeholder="Enter amount" required>
+        </label>
+        <label class="block">
+          <span class="text-gray-700">Payment Method</span>
+          <select id="paymentMethod" class="mt-1 block w-full input-box rounded-md p-2" required>
+            <option value="">Select Payment Method</option>
+            <option value="credit-card">Credit Card</option>
+            <option value="paypal">PayPal</option>
+            <option value="mobile-money">Mobile Money</option>
+            <option value="bank-transfer">Bank Transfer</option>
+          </select>
+        </label>
+
+        <!-- Dynamic Payment Details Sections -->
+        <div id="creditCardDetails" class="hidden space-y-4 donation-method-box">
+          <label class="block">
+            <span class="text-gray-700">Card Number</span>
+            <input type="text" class="mt-1 block w-full input-box rounded-md p-2" placeholder="Enter card number">
+          </label>
+          <label class="block">
+            <span class="text-gray-700">Expiration Date</span>
+            <input type="text" class="mt-1 block w-full input-box rounded-md p-2" placeholder="MM/YY">
+          </label>
+          <label class="block">
+            <span class="text-gray-700">CVV</span>
+            <input type="text" class="mt-1 block w-full input-box rounded-md p-2" placeholder="CVV">
+          </label>
+          <p class="text-sm text-gray-500">Your card details are securely processed.</p>
+        </div>
+
+        <div id="mobileMoneyDetails" class="hidden space-y-4 donation-method-box">
+          <label class="block">
+            <span class="text-gray-700">Mobile Money Number</span>
+            <input type="text" class="mt-1 block w-full input-box rounded-md p-2" placeholder="Enter mobile money number">
+          </label>
+          <p class="text-sm text-gray-500">We support MTN, Airtel, and other major providers.</p>
+        </div>
+
+        <div id="bankTransferDetails" class="hidden space-y-4 donation-method-box">
+          <label class="block">
+            <span class="text-gray-700">Bank Name</span>
+            <input type="text" class="mt-1 block w-full input-box rounded-md p-2" placeholder="Enter bank name">
+          </label>
+          <label class="block">
+            <span class="text-gray-700">Account Number</span>
+            <input type="text" class="mt-1 block w-full input-box rounded-md p-2" placeholder="Enter account number">
+          </label>
+          <p class="text-sm text-gray-500">Please include your name as a reference.</p>
+        </div>
+
+        <button class="w-full brand-bg text-white py-2 rounded-md font-bold brand-hover">Donate Now</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer py-8 mt-16">
+    <div class="container mx-auto px-4 md:px-0">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h4 class="text-lg font-bold mb-4">About Us</h4>
+          <p class="text-sm">AfroScholarHub is dedicated to empowering students through education and mentorship programs.</p>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-sm hover:text-red-600">Home</a></li>
+            <li><a href="about.html" class="text-sm hover:text-red-600">About</a></li>
+            <li><a href="programs.html" class="text-sm hover:text-red-600">Programs</a></li>
+            <li><a href="donate.html" class="text-sm hover:text-red-600">Donate</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-bold mb-4">Contact Us</h4>
+          <p class="text-sm">Email: info@afroscholarhub.org</p>
+          <p class="text-sm">Phone: +123 456 7890</p>
+        </div>
+      </div>
+      <div class="text-center mt-8">
+        <p class="text-sm">&copy; 2023 AfroScholarHub. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('paymentMethod').addEventListener('change', function () {
+      let method = this.value;
+      document.getElementById('creditCardDetails').classList.add('hidden');
+      document.getElementById('mobileMoneyDetails').classList.add('hidden');
+      document.getElementById('bankTransferDetails').classList.add('hidden');
+      if (method === 'credit-card') document.getElementById('creditCardDetails').classList.remove('hidden');
+      if (method === 'mobile-money') document.getElementById('mobileMoneyDetails').classList.remove('hidden');
+      if (method === 'bank-transfer') document.getElementById('bankTransferDetails').classList.remove('hidden');
+    });
+  </script>
+</body>
+</html>
