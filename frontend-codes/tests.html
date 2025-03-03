@@ -694,6 +694,14 @@
             form.reset();
             form.classList.remove('submitting');
             // Add success message animation here
+            const successMessage = document.createElement('p');
+            successMessage.textContent = 'Thank you for subscribing!';
+            successMessage.style.color = 'var(--primary-red)';
+            successMessage.style.marginTop = '1rem';
+            form.appendChild(successMessage);
+            setTimeout(() => {
+            successMessage.remove();
+            }, 3000);
         }, 2000);
     });
 </script>
