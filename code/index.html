@@ -159,17 +159,325 @@
           font-size: 1.5rem;
         }
       }
+      :root {
+        --primary-red: #e94f37;
+        --brand-white: #ffffff;
+        --brand-black: #1a1a1a;
+        --brand-grey: #666666;
+        --brand-ash: #888888;
+        --font-heading: "Space Grotesk", sans-serif;
+        --font-body: "Inter", sans-serif;
+      }
 
-      /* Add all previous header, footer, and component styles here */
-      /* Include all styles from previous answers */
+      /* Enhanced Header */
+      .site-header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        background: var(--brand-white);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .top-bar {
+        background: linear-gradient(90deg, var(--primary-red), #c0392b);
+        padding: 0.8rem 0;
+        color: var(--brand-white);
+      }
+
+      .top-bar-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      .utility-nav {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .utility-nav a {
+        color: var(--brand-white);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .utility-nav a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--brand-white);
+        transition: width 0.3s ease;
+      }
+
+      .utility-nav a:hover::after {
+        width: 100%;
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        text-decoration: none;
+        transition: transform 0.3s ease;
+      }
+
+      .logo:hover {
+        transform: scale(1.02);
+      }
+
+      .logo img {
+        height: 50px;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+      }
+
+      .logo span {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        color: var(--brand-black);
+        font-weight: 700;
+      }
+
+      /* Enhanced Navigation */
+      .nav-list {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-link {
+        color: var(--brand-black);
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--primary-red);
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::before {
+        width: 100%;
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        background: var(--brand-white);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 1rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        min-width: 200px;
+      }
+
+      .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* Mobile Navigation */
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: var(--brand-black);
+        cursor: pointer;
+        z-index: 1001;
+      }
+
+      @media (max-width: 768px) {
+        .menu-toggle {
+          display: block;
+        }
+
+        .nav-list {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          height: 100vh;
+          width: 70%;
+          background: var(--brand-white);
+          flex-direction: column;
+          padding: 2rem;
+          box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+          transition: right 0.3s ease;
+        }
+
+        .nav-list.active {
+          right: 0;
+        }
+
+        .dropdown-menu {
+          position: static;
+          box-shadow: none;
+          background: transparent;
+          padding: 0;
+          margin-left: 1rem;
+        }
+      }
+
+      /* New Interactive Section */
+      .featured-programs {
+        margin-top: 150px;
+        padding: 4rem 0;
+        background: linear-gradient(45deg, #f8f9fa 0%, #ffffff 100%);
+      }
+
+      .program-card {
+        background: var(--brand-white);
+        border-radius: 16px;
+        padding: 2rem;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .program-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .stat-card {
+        text-align: center;
+        padding: 2rem;
+        background: var(--brand-white);
+        border-radius: 16px;
+        transition: all 0.3s ease;
+      }
+
+      .stat-card:hover {
+        transform: scale(1.05);
+      }
     </style>
   </head>
   <body>
     <!-- Header -->
     <header class="site-header">
-      <!-- Include header content from previous answer -->
+      <div class="top-bar">
+        <div class="top-bar-content">
+          <div class="contact-info">
+            <a href="tel:+1234567890"
+              ><i class="fas fa-phone"></i> +1 (234) 567-890</a
+            >
+          </div>
+          <nav class="utility-nav">
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+            <a href="signup.html"><i class="fas fa-user-plus"></i> Sign Up</a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="header-content">
+        <a href="index.html" class="logo">
+          <img src="logo.png" alt="AfroScholarHub Logo" />
+          <span>AfroScholarHub</span>
+        </a>
+
+        <button class="menu-toggle" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <nav class="main-nav">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="about.html" class="nav-link"
+                >About <i class="fas fa-chevron-down"></i
+              ></a>
+              <div class="dropdown-menu">
+                <a href="about.html#mission">Our Mission</a>
+                <a href="about.html#team">Our Team</a>
+                <a href="about.html#partners">Partners</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="programs.html" class="nav-link active"
+                >Programs <i class="fas fa-chevron-down"></i
+              ></a>
+              <div class="dropdown-menu">
+                <a href="#scholarships">Scholarships</a>
+                <a href="#mentorship">Mentorship</a>
+                <a href="#workshops">Workshops</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="donate.html" class="nav-link cta-button">Donate</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
+    <section class="featured-programs">
+      <div class="container">
+        <h2 class="section-title">Featured Initiatives</h2>
+        <div class="stats-grid">
+          <div class="program-card">
+            <h3>STEM Education Program</h3>
+            <p>Empowering students with cutting-edge technology education</p>
+            <div class="program-stats">
+              <div class="stat-item">
+                <div class="stat-number">1,200+</div>
+                <div class="stat-label">Students Trained</div>
+              </div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">85%</div>
+            <div class="stat-label">Success Rate</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Partner Schools</div>
+          </div>
+        </div>
+      </div>
+    </section>
     <main>
       <!-- Hero Section -->
       <section class="hero">
@@ -200,7 +508,7 @@
         </div>
       </section>
     </main>
-    
+
     <!-- Footer Section -->
     <footer class="site-footer">
       <div class="footer-wave">
